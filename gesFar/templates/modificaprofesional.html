@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar Datos  Del Profesional</title>
+    <link href='https://fonts.googleapis.com/css?family=Monserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/medic@s.css">
+    <link rel="shortcut icon" href="./img/silueta logo.png" />
+  </head>
+  <body>
+    <header>
+    </header>
+    <main>
+      <h1><strong>Modificar Datos Del Profesional</strong></h1>
+      <form action="../html/show-data.html" target="_blank">
+        <div class="right-section">
+          <table>
+            <tr>
+              <td><label for="nombre">Nombre:</label></td>
+              <td><input type="text" name="nombre" id="nombre" /></td>
+            </tr>
+            <tr>
+              <td><label for="apellido">Apellido:</label></td>
+              <td><input type="text" name="apellido" id="apellido" /></td>
+            </tr>
+            <tr>
+              <td><label for="matrícula">Matrícula:</label></td>
+              <td><input type="text" name="text" id="text" /></td>
+            </tr>
+            <tr>
+              <td><label for="Profesión">Profesión:</label></td>
+              <td>
+                <select id="profesion">
+                  <option value="Medico">Médic@</option>
+                  <option value="Enfermero">Enfermer@</option>
+                  <option value="Licenciado">Licend@</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="especialidad">Especialidad:</label></td>
+              <td>
+                <select id="especialidades">
+                  <option value="cxgral">Cx. General</option>
+                  <option value="neonatologia">Neonatología</option>
+                  <option value="cardiologia">Cardiología</option>
+                  <option value="pediatria">Pediatría</option>
+                  <option value="terapiamay">Terapia Intensiva</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label for="usuario">Usuario:</label></td>
+              <td><input type="text" name="usuario" id="usuario" /></td>
+            </tr>
+            <tr>
+              <td><label for="contrasena">Contraseña:</label></td>
+              <td><input type="password" name="contraseña" id="contraseña" /></td>
+            </tr>
+            <tr>
+              <td><input type="reset" value="Limpiar" /></td>
+              <td><input type="submit" value="Confirmar Modificación" /></td>
+            </tr>
+          </table>
+        </div>  
+      </form>
+      <form action="index.html">
+        <input type="submit" value="Ir a la página principal">
+      </form>
+    </main>
+
+      <p>Sitio Desarrollado por: The 4 Big Brains</p>
+    
+  </body>
+</html>

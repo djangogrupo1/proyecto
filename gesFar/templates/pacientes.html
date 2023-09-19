@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alta Pacientes</title>
+  <link href='https://fonts.googleapis.com/css?family=Monserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/pacientes.css">
+  <link rel="shortcut icon" href="./img/silueta logo.png" />
+</head>
+
+<body>
+  <header>
+    <h1>Alta Pacientes</h1>
+    <nav class="header-menu">
+      <ul>
+        <li><a href="modificaprofesional.html">Modificar</a></li>
+        <li><a href="bajaprofesional.html">Baja</a></li>
+        <li><a href="modulos.html">Módulos</a></li>
+        <li><a href="index.html">Inicio</a></li>
+      </ul><br><br>
+    </nav>
+
+  </header>
+  <main>
+
+    <form action="../html/show-data.html" target="_blank">
+      <div class="right-section">
+        <table>
+          <tr>
+            <td><label for="nombre">Nombre:</label></td>
+            <td><input type="text" name="nombre" id="nombre" /></td>
+          <tr>
+          <tr>
+            <td><label for="apellido">Apellido:</label></td>
+            <td><input type="text" name="apellido" id="apellido" /></td>
+          <tr>
+          <tr>
+            <td><label for="dni">DNI:</label></td>
+            <td><input type="numero" name="dni" id="dni" /> </td>
+          <tr>
+          <tr>
+            <td colspan="2">
+              <h2>Reparto</h2>
+            </td>
+          <tr>
+          <tr>
+            <td><label for="dni">Especialidades:</label></td>
+            <td>
+              <select id="especialidades">
+                <option value="psiqua">Psiquiatria jaja</option>
+                <option value="cxgral">Cx. General</option>
+                <option value="neonatologia">Neonatología</option>
+                <option value="cardiologia">Cardiología</option>
+                <option value="pediatria">Pediatría</option>
+                <option value="terapiamay">Terapia Intensiva</option>
+              </select>
+            </td>
+          <tr>
+          <tr>
+            <td><label for="fechin">Fecha Ingreso:</label></td>
+            <td><input type="date" name="fechin" id="fechin" /></td>
+          <tr>
+          <tr>
+            <td><label for="fechal">Fecha Egreso:</label></td>
+            <td><input type="date" name="fechal" id="fechal" /></td>
+          <tr>
+          <tr>
+            <td><label for="tel">Telefono emergencia:</label></td>
+            <td><input type="numero" name="tel" id="tel" /></td>
+          <tr>
+          <tr>
+            <td><input type="reset" value="Limpiar" /></td>
+            <td><input type="submit" value="Confirmar" /></td>
+          <tr>
+        </table>
+      </div>
+    </form>
+   
+      
+    </div>
+  </main>
+</body>
+
+</html>
