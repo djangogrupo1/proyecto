@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Carga</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/farmacos_alta.css">
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <form action="" class="formulario" id="app" style="background-color:blanchedalmond;margin:10px auto ; width: 500px; padding: 20px;">
+    <h1 class="formulario_titulo">Carga de Fármacos</h1><br><br>
+   
+      <label for="codigo_barras">Cod. Barras </label>
+      <input type="text" class="formulario input" v-model="codigo_barras">
+      <label for="nombre">Nombre </label>
+      <input type="text" class="formulario input" v-model="nombre">
+      <label for="presentacion">Presentación </label>
+      <input type="text" class="formulario input" v-model="presentacion">
+      <label for="laboratorio">Laboratorio </label>
+      <input type="text" class="formulario input" v-model="laboratorio">
+      <label for="concentracion">Concentración </label>
+      <input type="text" class="formulario input" v-model="concentracion">
+      <label for="lote">Lote </label>
+      <input type="text" class="formulario input" v-model="lote">
+      <label for="stock">Stock </label>
+      <input type="number" class="formulario input" v-model="stock">
+      <label for="fecha_vencimiento">Fecha vto. </label>
+      <input type="text" class="formulario input" v-model="fecha_vencimiento">
+      <button type="button" class="formulario__submit" v-on:click="agregar()">Cargar</button>
+    </form>
+ 
+
+
+
+
+  </main>
+  <footer>
+    <nav class="header-menu">
+      
+      <ul>
+        <li><a href="farmacos.html">Farmacia</a></li>
+        <li><a href="modulos.html">Módulos</a></li>
+        <li><a href="index.html">Inicio</a></li>
+      </ul><br><br>
+    </nav>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+   <script src="./js/farmacos.js"></script>
+
+</body>
+
+</html>

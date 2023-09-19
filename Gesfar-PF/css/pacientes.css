@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,300;1,600&display=swap');
+
+body {
+    background-color: #aa86af;
+    font-family: 'Monserrat', sans-serif;
+    background-image:url("../img/logo\ blanco.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color:grey;
+    text-align: center;
+   
+}
+
+nav ul li {
+    display: inline-block;
+    position: center;
+    font-family: 'Monserrat', sans-serif;
+    text-align: center;
+    
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    color: whitesmoke;
+    text-decoration:transparent
+    
+}
+
+nav ul li:hover>ul {
+    display: block;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #8c8b8b;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.left-section {
+    grid-column: 1 / 2;
+}
+
+/* .right-section {
+    grid-column: 1/2;
+    background-color: #784390;
+    padding: 20px;
+    border: 2px solid #221628;
+    border-radius: 10px;
+} */
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color:#442c50;
+}
+
+input[type="text"], input[type="password"], input[type="numero"], input[type="date"]{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #221628;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Family Font', sans-serif;
+    width: 96%;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"]{
+    background-color:  #221628;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]  {
+    background-color: #442c50;
+}
+
+select{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #221628;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Monserrat', sans-serif;
+    width: 100%;
+}
+
+h1{
+text-align: center;
+color: #1c1c1d;
+font-size: 45px;
+font-style: 'Monserrat' ;
+font-weight:lighter;
+}
+h2{
+    color: #221628;
+    font-size: 20px;
+    font-style: 'Monserrat' ;
+    font-weight:bolder;   
+}
+option{
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #221628;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Monserrat', sans-serif;
+    grid-column: 1/2;
+}
+.especialidades{
+    background-color:#442c50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #221628;
+    cursor: pointer;
+    font-family: 'Monserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    grid-column:1/2 ;
+  }
+
+  
