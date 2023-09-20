@@ -111,7 +111,20 @@ html{
       background-repeat: no-repeat;
       background-size: cover;
     }
-    
+
+    .img:first-child {
+      background-image: url('../img/01.jpg');
+    }
+
+
+    .img:nth-child(2) {
+      background-image: url('../img/02.jpg');
+    }
+
+
+    .img:nth-child(3) {
+      background-image: url('../img/03.jpg');
+    }
     .puntos {
       position: absolute;
       bottom: 10px;
