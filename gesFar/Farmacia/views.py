@@ -10,3 +10,6 @@ def index(request):
 
 def modulo(request):
     return render(request, 'modulo.html')
+
+def acercade(request):
+    return render(request, "acercade.html")
