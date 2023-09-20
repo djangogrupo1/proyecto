@@ -7,3 +7,6 @@ from django.http import HttpResponse
 def index(request):
     contexto = {'mensaje': '¡Hola desde la vista de inicio!'}
     return render(request, 'home.html', contexto)
+
+def modulo(request):
+    return render(request, 'modulo.html')
