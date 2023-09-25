@@ -1,5 +1,13 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerButton = document.querySelector('.burguer-holder');
+  const menu = document.querySelector('.menu');
+
+  burgerButton.addEventListener('click', function () {
+      menu.classList.toggle('menu-visible');
+  });
+});
 /* JS de menu de Hexagonos */
-const hexagons = document.querySelectorAll('.hex');
+/* const hexagons = document.querySelectorAll('.hex');
 
 hexagons.forEach(hex => {
     const hexImage = hex.querySelector('.hex-inner');
@@ -9,14 +17,14 @@ hexagons.forEach(hex => {
     hex.addEventListener('mouseleave', () => {
         hexImage.style.transform = 'scale(1)';
     });
-});
+}); */
 
 /* fin */
 
 
 /* PARA REPLICAR EL HEADER*/
 
-let miHeader =  `   
+/* let miHeader =  `   
 <!-- Header logo -->
 <a href="index.html">
   <div class="header-logo">
@@ -36,12 +44,12 @@ let miHeader =  `
 
   </ul>
 </nav>
-<!-- fin nav -->
-`
-document.querySelector("header").innerHTML = miHeader;
+<!-- fin nav --> */
+/* 
+document.querySelector("header").innerHTML = miHeader; */
 
 /* PARA REPLICAR EL FOOTER */
-
+/* 
 let miFooter = `
 
 <div class="footer-container">
@@ -94,16 +102,16 @@ let miFooter = `
 </section>
 
 
-`
-document.querySelector("footer").innerHTML = miFooter;
-
+` */
+/* document.querySelector("footer").innerHTML = miFooter;
+ */
 // para funcionar los videos 
 
-window.addEventListener('DOMContentLoaded',(event)=>{
+/* window.addEventListener('DOMContentLoaded',(event)=>{
   var video= document.getElementById('miVideo');
   video.play()
 });
-
+ */
 
 // //// REcibir los mensajes en nuestro email
 

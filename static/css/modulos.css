@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Ubuntu:ital,wght@0,500;0,700;1,300&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -92,9 +91,11 @@
 .body__card_back p{
     margin-top: 30px;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .body__card_back a{
+  text-decoration: none;
     display: inline-block;
     padding: 10px 20px;
     margin-top: 30px;
@@ -102,18 +103,21 @@
     cursor: pointer;
     border: none;
     color: white;
-    background: #58B0F6;
-    box-shadow: 1px 1px 30px -5px #58B0F6;
+    background: #784390;
+    font-weight: bold;
+    box-shadow: 1px 1px 30px -5px #784390;
     border-radius: 10px;
     transition: box-shadow 600ms;
+    transition: all 0.3s ease-in-out;
     
 }
 
 .body__card_back a:hover{
-    box-shadow: 1px 1px 30px 0px #449de6;
+    box-shadow: 1px 1px 30px 0px #784390;
+    transform: scale(110%);
 }
 
-footer{
+/* footer{
     width: 100%;
     background-color: #e9c4f9;
     padding: 20px;
@@ -121,9 +125,9 @@ footer{
     min-height: 50px;
     margin: 0.5rem;
     min-width:400px ;
-  }
+  } */
   /* Fin footer */
-  .footer-container {
+/*   .footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -158,7 +162,7 @@ footer{
     color: rgb(5, 65, 5);
     text-decoration: none;
   }
-  
+   */
   #map {
     width: 100%;
     height: 200px;
