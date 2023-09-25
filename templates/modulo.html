@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 {% load static %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="{% static './css/modulos.css' %}">
+{% endblock %}
 {% block title %}Página 1{% endblock %}
 
 {% block content %}
         <div class="container__card">
-
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image: url(img/medico1.jpg);">
+                    <div class="card__front" style="background-image: url('{% static 'img/medico1.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
                             <h1>Acceso de Médicos, Enfermeros y Administrativos</h1>
                         </div>
                     </div>
-                    <div class="card__back" style="background-image: url(img/medicoyenfermera.jpg);">
+                    <div class="card__back" style="background-image: url('{% static 'img/medicoyenfermera.jpg' %}')">
                         <div class="body__card_back" >
                             <h1>Sección Profesionales</h1>
                             <p>Dispondran de las Historias Clínicas de los Pacientes. Servicio personalizado según patologías
@@ -26,13 +30,13 @@
 
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image: url(img/paciente.jpg);">
+                    <div class="card__front" style="background-image: url('{% static 'img/paciente.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
                             <h1>Ingreso del Paciente</h1>
                         </div>
                     </div>
-                    <div class="card__back" style="background-image: url(img/paciente2.jpg);">
+                    <div class="card__back" style="background-image: url('{% static 'img/paciente2.jpg' %}')">
                         <div class="body__card_back">
                             <h1>Sección Pacientes</h1>
                             <p>Tendrás un acceso directo a tu Historia Clínica, podrás ver tus recertas y el estado de tus pedidos
@@ -45,13 +49,13 @@
 
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image: url(img/farmacia.jpg);">
+                    <div class="card__front" style="background-image: url('{% static 'img/farmacia.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
                             <h1>Control de Stock de Medicamentos, Descartable y cualquier otro tipo que se desee</h1>
                         </div>
                     </div>
-                    <div class="card__back" style="background-image: url(img/farmacos.jpg);">
+                    <div class="card__back" style="background-image: url('{% static 'img/farmacos.jpg' %}')">
                         <div class="body__card_back">
                             <h1>Sección Farmacia</h1>
                             <p>Control de Stock mínimo,punto de reposición y 
@@ -64,13 +68,13 @@
 
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image: url(img/carga.jpg);">
+                    <div class="card__front" style="background-image: url('{% static 'img/carga.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
                             <h1>Ingreso de las Recetas</h1>
                         </div>
                     </div>
-                    <div class="card__back" style="background-image: url(img/receta.jpg);">
+                    <div class="card__back" style="background-image: url('{% static 'img/receta.jpg' %}')">
                         <div class="body__card_back">
                             <h1>Sección Recetas</h1>
                             <p>Llegarán las recetas realizadas en consultorio por los Profesionales, y también en 
@@ -83,13 +87,13 @@
 
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image: url(img/farmacos2.jpg);">
+                    <div class="card__front" style="background-image: url('{% static 'img/farmacos2.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
                             <h1>Entrega del Pedido de Recetas</h1>
                         </div>
                     </div>
-                    <div class="card__back" style="background-image: url(img/farmacos3.jpg);">
+                    <div class="card__back" style="background-image: url('{% static 'img/farmacos3.jpg' %}')">
                         <div class="body__card_back">
                             <h1>Preparados de Farmacia</h1>
                             <p>Valorización del Medicamento para Facturación. Gestión de Pedidos de Presupuestos. Órdenes de compras.</p>
@@ -100,4 +104,4 @@
             </div>
 
         </div>
-        {% endblock %}
+{% endblock %}
