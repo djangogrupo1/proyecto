@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 {% load static %}
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +11,7 @@
   <link rel="stylesheet" href="{% static 'css/estilos.css' %}" />
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
-<!--   <script src="{% static './js/app.js' %}"></script> -->
+  <!--   <script src="{% static './js/app.js' %}"></script> -->
   {% block head %}
   {% endblock %}
 </head>
@@ -18,79 +19,87 @@
 <body>
   <header>
     <a href="index.html">
-        <div class="header-logo">
-          <img width="150" src="{% static './img/logo blanco.png' %}" alt="logo " />
-        </div>
-      </a>
-      <!-- fin header -->
-      <br />
-      <!-- Menu nav -->
-      <nav class="header-menu">
-        <div class="burguer-holder">
-          <img src="{% static './img/menu_white.png' %}" alt="">
-        </div>
-        <ul class="menu">
-          <li><a href="{% url 'index' %}">Inicio</a></li>
-          <li><a href="{% url 'modulo' %}">Modulos</a></li>
-          <li><a href="nosotros.html">Sobre Nosotros</a></li>
-          <li><a href="{% url 'acercade' %}">Acerca de</a></li>
-          <li><a href="contacto.html">Contactos</a></li>
-      
-        </ul>
+      <div class="header-logo">
+        <img width="150" src="{% static './img/logo blanco.png' %}" alt="logo " />
+      </div>
+    </a>
+    <!-- fin header -->
+    <br />
+    <!-- Menu nav -->
+    <nav class="header-menu">
+      <div class="burguer-holder">
+        <img src="{% static './img/menu_white.png' %}" alt="">
+      </div>
+      <ul class="menu">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'modulo' %}">Modulos</a></li>
+        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+        <li><a href="{% url 'acercade' %}">Acerca de</a></li>
+        <li><a href="contacto.html">Contactos</a></li>
 
-      </nav>
+      </ul>
+
+    </nav>
   </header>
   <main>
     {% block content %}{% endblock %}
   </main>
   <footer>
     <div class="footer-container">
-        <div class="footer-column">
-          <h3><i class="fas fa-cogs"></i> Nuestra Plataforma</h3>
-          <ul style="background-color: #3330;">
-            <li>Sencillez y agilidad</li>
-            <li>Una herramienta que se adapta a las necesidades y procesos actuales de tu organización</li>
-            <li>Data Analytics para medir la operación en tiempo real</li>
-            <li>APIs de integración</li>
-            <li>Privacidad y resguardo de datos</li>
-          </ul>
-         
-        </div>
-        <div class="footer-column">
-          <h3><i class="fas fa-cubes"></i> Módulos Disponibles</h3>
-          <p>El módulo de gestión de pacientes facilita el registro y seguimiento de la información del paciente, incluyendo datos de contacto, historiales médicos y aseguradoras. El módulo de historiales clínicos electrónicos permite el acceso rápido y seguro a la información médica del paciente.</p>
-        </div>
-        <div class="footer-column">
-          <h3><i class="fas fa-map-marker-alt"></i> Ubicación</h3>
-          <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14029.25880567122!2d-65.78533767015857!3d-28.470067763185654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942428bf1d0f9fcd%3A0x7e1edd4b1609861a!2sSan%20Fernando%20del%20Valle%20de%20Catamarca%2C%20Catamarca!5e0!3m2!1ses-419!2sar!4v1685286269393!5m2!1ses-419!2sar"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-        </div>
-        <div class="footer-column footer-contact">
-          <h3><i class="fas fa-whatsapp"></i> Contacto</h3>
-          <p>Contáctanos a través de:</p>
-          <a href="gesfar.servicio@hotmail.com" class=""><img src="{% static './img/gmail (1).png' %}" width="20px" alt="Email"><strong>E-mail</strong></a>
-          <a href="https://wa.me/11111111" class="whatsapp-link"><img src="{% static './img/whatsapp (1).png' %}" alt="WhatsApp"><strong>5785 8965</strong></a>
-          <a href="#" class=""><img src="{% static './img/facebook (1).png' %}" width="20px" alt="Facebook"><strong>Facebook</strong></a>
-          <a href="#" class=""><img src="{% static './img/instagram (1).png' %}" width="20px" alt="Instagram"><strong>Instagram</strong></a>
-        </div>
-        </div>
-        </footer>
-        <section class="sub-footer" style="background-color: #f3e3f9; text-align: center; padding: 10px;">
-        <div class="sub-footer-container">
-        <div class="row">
-            <div class="col-sm-10 text-center text-sm-left">
-              <span class="">Ges-Far 2023 ©. <span class="d-block d-sm-inline mb-2">Todos los derechos reservados.<br>Sitio Desarrollado por: The 4 Big Brains.</span></span>
-            </div>
-            <div class="col-sm-2 text-center text-sm-right">
-              <a href="index.html" target="_blank" class="hvr-float-shadow">
-                  <img src="{% static './img/silueta logo.png' %}" width="48px" alt="Ges-Far">
-              </a>
-            </div>
-        </div>
-        </div>
-        </section>
-  </footer>
-   
+      <div class="footer-column">
+        <h3><i class="fas fa-cogs"></i> Nuestra Plataforma</h3>
+        <ul style="background-color: #3330;">
+          <li>Sencillez y agilidad</li>
+          <li>Una herramienta que se adapta a las necesidades y procesos actuales de tu organización</li>
+          <li>Data Analytics para medir la operación en tiempo real</li>
+          <li>APIs de integración</li>
+          <li>Privacidad y resguardo de datos</li>
+        </ul>
 
+      </div>
+      <div class="footer-column">
+        <h3><i class="fas fa-cubes"></i> Módulos Disponibles</h3>
+        <p>El módulo de gestión de pacientes facilita el registro y seguimiento de la información del paciente,
+          incluyendo datos de contacto, historiales médicos y aseguradoras. El módulo de historiales clínicos
+          electrónicos permite el acceso rápido y seguro a la información médica del paciente.</p>
+      </div>
+      <div class="footer-column">
+        <h3><i class="fas fa-map-marker-alt"></i> Ubicación</h3>
+        <div id="map"><iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14029.25880567122!2d-65.78533767015857!3d-28.470067763185654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942428bf1d0f9fcd%3A0x7e1edd4b1609861a!2sSan%20Fernando%20del%20Valle%20de%20Catamarca%2C%20Catamarca!5e0!3m2!1ses-419!2sar!4v1685286269393!5m2!1ses-419!2sar"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="footer-column footer-contact">
+        <h3><i class="fas fa-whatsapp"></i> Contacto</h3>
+        <p>Contáctanos a través de:</p>
+        <a href="gesfar.servicio@hotmail.com" class=""><img src="{% static './img/gmail (1).png' %}" width="20px"
+            alt="Email"><strong>E-mail</strong></a>
+        <a href="https://wa.me/11111111" class="whatsapp-link"><img src="{% static './img/whatsapp (1).png' %}"
+            alt="WhatsApp"><strong>5785 8965</strong></a>
+        <a href="#" class=""><img src="{% static './img/facebook (1).png' %}" width="20px"
+            alt="Facebook"><strong>Facebook</strong></a>
+        <a href="#" class=""><img src="{% static './img/instagram (1).png' %}" width="20px"
+            alt="Instagram"><strong>Instagram</strong></a>
+      </div>
+    </div>
+  </footer>
+  <section class="sub-footer" style="background-color: #f3e3f9; text-align: center; padding: 10px;">
+    <div class="sub-footer-container">
+      <div class="row">
+        <div class="col-sm-10 text-center text-sm-left">
+          <span class="">Ges-Far 2023 ©. <span class="d-block d-sm-inline mb-2">Todos los derechos reservados.<br>Sitio
+              Desarrollado por: The 4 Big Brains.</span></span>
+        </div>
+        <div class="col-sm-2 text-center text-sm-right">
+          <a href="index.html" target="_blank" class="hvr-float-shadow">
+            <img src="{% static './img/silueta logo.png' %}" width="48px" alt="Ges-Far">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </footer>
   <script src="{% static './js/app.js' %}"></script>
   {% block javascript %}{% endblock %}
 </body>
