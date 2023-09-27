@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Página 5{% endblock %}
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,12 +13,13 @@
     <link href='https://fonts.googleapis.com/css?family=Monserrat' rel='stylesheet'>
     <link rel="stylesheet" href="./css/contactos.css">
 
-
 </head>
 
 <body>
 
-   
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
 
     <div class="container">
@@ -51,7 +58,7 @@
             </form>
         </nav>
     </div>
-    <script src="./js/js/contacto.js"></script>
+    <script src="{% static './js/contacto.js'%}"></script>
     
 </body>
 

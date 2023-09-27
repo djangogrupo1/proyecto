@@ -11,3 +11,7 @@ def index(request):
 
 def acercade(request):
     return render(request, "acercade.html")
+
+def contacto (request):
+    return render(request, "contacto.html")
+

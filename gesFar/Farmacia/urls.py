@@ -4,5 +4,6 @@ from django.shortcuts import render
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("acercade/", views.acercade, name="acercade")
+    path("acercade/", views.acercade, name="acercade"),
+    path("contacto/", views.contacto, name="contacto")
 ]
