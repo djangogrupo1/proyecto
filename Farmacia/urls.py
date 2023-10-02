@@ -1,12 +1,17 @@
 from django.urls import path
-from . import views
+#from  Farmacia import views
+from .views import  acercade, contacto, modulo, acercade, index
 from django.shortcuts import render
+#import sys
+#import os
+
+#sys.path.append('tp_cac_23635_version2')
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("acercade/", views.acercade, name="acercade"),
-    path("contacto/", views.contacto, name="contacto"),
-    path("modulo/", views.modulo, name="modulo"),
-    path("acercade/", views.acercade, name="acercade")
+    path("", index, name="index"),
+    path("acercade/", acercade, name="acercade"),
+    path("contacto/", contacto, name="contacto"),
+    path("modulo/", modulo, name="modulo"),
+    path("acercade/", acercade, name="acercade")
          
     ]

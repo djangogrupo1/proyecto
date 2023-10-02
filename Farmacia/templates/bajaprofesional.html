@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baja Profesional</title>
+    <link href='https://fonts.googleapis.com/css?family=Monserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/medic@s.css">
+    <link rel="shortcut icon" href="./img/silueta logo.png" />
+  </head>
+  <body>
+    <main>
+      <h1>Baja Profesional</h1>
+      <form onsubmit="return confirmarBaja()">
+        <div class="right-section">
+          <label for="matricula">Número de matrícula:</label>
+          <input type="text" id="matricula" name="matricula">
+          <br>
+          <button type="submit">Dar de baja</button>
+        </div>  
+      </form>
+      <script>
+        function confirmarBaja() {
+          const matricula = document.getElementById('matricula').value;
+          if (matricula) {
+            if (confirm(`¿Está seguro de que desea dar de baja al usuario con matrícula ${matricula}?`)) {
+              document.getElementById('matricula').value = '';
+              return true;
+            } else {
+              return false;
+            }
+          } else {
+            alert('Por favor, ingrese un número de matrícula válido.');
+            return false;
+          }
+        }
+      </script>
+    </header>
+        <nav>
+          <form action="index.html">
+            <input type="submit" id="btn-home" value="Ir a la página principal">
+          </form>
+        </nav>
+      </div>
+    </div>
+      </form>
+    </main>
+
+      <p>Sitio Desarrollado por: The 4 Big Brains</p>
+    
+  </body>
+</html>

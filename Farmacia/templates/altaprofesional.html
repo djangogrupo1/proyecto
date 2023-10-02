@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alta Profesional</title>
+  <link href='https://fonts.googleapis.com/css?family=Monserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/medic@s.css">
+  <link rel="shortcut icon" href="./img/silueta logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,700;1,300;1,600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+    <h1><strong>Alta Profesional</strong></h1>
+    <nav class="header-menu">
+      
+      <ul>
+        <li><a href="modificaprofesional.html">Modificar</a></li>
+        <li><a href="bajaprofesional.html">Baja</a></li>
+        <li><a href="modulos.html">Módulos</a></li>
+        <li><a href="index.html">Inicio</a></li>
+      </ul><br><br>
+    </nav>
+  </header>
+  <main>
+    <div class="right-section">
+      <form action="./show-data.html" target="_blank">
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre"><br>
+        <label for="apellido">Apellido: </label>;
+                <input type="text" name="apellido" id="apellido"><br>
+                <label for="matricula">Matrícula: </label>
+                <input type="text" name="text" id="text"><br>
+        <h2>Profesión: </h2>
+        <select id="profesion">
+          <option value="Medico">Médic@</option>
+          <option value="Enfermero">Enfermer@</option>
+          <option value="Licenciado">Licenciad@</option>
+        </select><br>
+        <h2>Especialidad: </h2>
+        <select id="especialidad">
+          <option value="cxgral">Cx.General</option>
+          <option value="neonatologia">Neonatología</option>
+          <option value="cardiologia">Cardiología</option>
+          <option value="pediatria">Pediatría</option>
+          <option value="terapiamay">Terapia INtensiva</option>
+          <option value="traumatologia">Traumatología</option>
+          <option value="guardia">Guardia</option>
+        </select><br><br>
+        
+        <input type="submit" value="Confirmar"><br>
+        <input type="reset" value="Limpiar"><br>
+      </form>
+
+    </div>
+  </main>
+  <p>Sitio Desarrollado por: The 4 Big Brains</p>
+</body>
+
+</html>
