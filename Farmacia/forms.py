@@ -6,9 +6,9 @@ class ContactoForm ( forms.Forms ):
 
         )
     apellido = forms.CharField (
-        label= "Apellido", required = True
-        )
+        label= "Apellido", required = True, wiget = forms.TextInput(attrs={'class': 'form-control'})
 
+        )
     email = forms.EmailField (
         label= "Email:", required = True
         
@@ -18,3 +18,7 @@ class ContactoForm ( forms.Forms ):
     )
     
     #edad = forms.IntegerField (label= "Edad:" min_value=1 , max_value=90)          
+    
+    
+    
+    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
