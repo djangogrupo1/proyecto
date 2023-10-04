@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.http import HttpResponse
+from django.http import HttpResponse 
 
 
 # Create your views here.
@@ -13,10 +13,10 @@ def modulo(request):
 
 def acercade(request):
     return render(request, "acercade.html")
-<<<<<<< HEAD:gesFar/Farmacia/views.py
 
 def contacto (request):
     return render(request, "contacto.html")
 
-=======
->>>>>>> 0e8b3dd48968319275e972e7c7ab5a53b0a7dbb8:Farmacia/views.py
+def nosotros (request):
+    return render (request, 'nosotros.html')
+
