@@ -1,14 +1,14 @@
 from django import forms
 
-class ContactoForm (forms.Forms):
+class ContactoForm ( forms.Forms ):
     nombre = forms.CharField (
         label= "Nombre:", required = True
 
         )
     apellido = forms.CharField (
-        label= "Apellido", required = True, wiget = forms.TextInput(attrs={'class': 'form-control'})
-
+        label= "Apellido", required = True
         )
+
     email = forms.EmailField (
         label= "Email:", required = True
         

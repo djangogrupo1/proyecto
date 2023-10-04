@@ -1,7 +1,6 @@
 from django.urls import path
 #from  Farmacia import views
 from .views import  acercade, contacto, modulo, acercade, index
-from django.shortcuts import render
 #import sys
 #import os
 
@@ -11,7 +10,6 @@ urlpatterns = [
     path("", index, name="index"),
     path("acercade/", acercade, name="acercade"),
     path("contacto/", contacto, name="contacto"),
-    path("modulo/", modulo, name="modulo"),
-    path("acercade/", acercade, name="acercade")
+    path("modulo/", modulo, name="modulo")
          
     ]

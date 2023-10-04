@@ -1,2 +1,3 @@
 # Ignorar archivos de caché de Python
-__pycache__/
+
+gesFar/__pycache__
