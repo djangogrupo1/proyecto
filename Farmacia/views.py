@@ -22,9 +22,9 @@ def acercade(request):
 def contacto(request):
   #tengo error al importar la clase ContactoForm del modulo forms.py
   formulario = ContactoForm() 
-  contex =  {
-    ' formulario_contacto ' : formulario 
+  context =  {
+     'formulario_contacto'  : formulario 
       }
-  return render (request, "contacto.html", ) #falta agregar contex
+  return render (request, "contacto.html", context ) #falta agregar contex
     
         
