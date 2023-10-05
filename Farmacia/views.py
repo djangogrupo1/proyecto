@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from  Farmacia.forms import ContactoForm
+from django.urls import reverse
 import sys
 #import os
 
@@ -20,11 +21,23 @@ def acercade(request):
     return render(request, "acercade.html")
 
 def contacto(request):
-  #tengo error al importar la clase ContactoForm del modulo forms.py
-  formulario = ContactoForm() 
+  #print (request. POST)
+  if request.method == 'POST':
+      formulario = ContactoForm ( request.POST )
+      if formulario.is_valid ():
+          redirect(reverse("acercade"))
+
+  else:
+      formulario = ContactoForm ()
+         
   context =  {
      'formulario_contacto'  : formulario 
       }
-  return render (request, "contacto.html", context ) #falta agregar contex
+  return render (request, "contacto.html", context ) 
+
+####se definen cleans###
+
+
+
     
         

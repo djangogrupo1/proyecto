@@ -1,4 +1,5 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 class ContactoForm ( forms.Form ):
     nombre = forms.CharField (
@@ -6,7 +7,7 @@ class ContactoForm ( forms.Form ):
 
         )
     apellido = forms.CharField (
-        label= "Apellido", required = True, widget = forms.TextInput(attrs={'class': 'form-control'})
+        label= "Apellido:", required = True, widget = forms.TextInput(attrs={'class': 'form-control'})
 
         )
     email = forms.EmailField (
@@ -18,10 +19,26 @@ class ContactoForm ( forms.Form ):
     label= "Mensaje", required = False, widget=forms.Textarea
     )
 
+    def clean_nombre(self):
+       if self.cleaned_data["nombre"] == int :
+          raise ValueError ("palabra inapropida")
+       return self.cleaned_data["nombre"]
+    
+        
+              
+
+
+
+
+
+
+    def clean(self):
+      pass     
+    
+      
+  
+
+
     #edad = forms.IntegerField (label= "Edad:" min_value=1 , max_value=90)          
     
-<<<<<<< HEAD
     
-=======
-    #'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'
->>>>>>> d57c5407c7df900fe726702ec88c1be0b504ebf9
