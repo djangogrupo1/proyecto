@@ -20,5 +20,3 @@ class ContactoForm ( forms.Forms ):
     #edad = forms.IntegerField (label= "Edad:" min_value=1 , max_value=90)          
     
     
-    
-    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
