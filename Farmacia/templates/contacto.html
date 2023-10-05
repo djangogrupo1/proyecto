@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_css%}
-<link rel="stylesheet" href="gesFar/static/css/contactos.css">
+<link rel="stylesheet" href="{% static './css/contactos.css'  %}">
 {% endblock %}
 {% block title %}contacto{% endblock %}
 {% block content %}
@@ -14,7 +14,7 @@
             </h1>
          </div>
   </div>    
-  <form action= " {% url  'contacto'  %} ">
+  <form action=  "{% url  'contacto'  %}" >
        {% csrf_token %}
       {{ formulario_contacto }}
       <input type="submit">
