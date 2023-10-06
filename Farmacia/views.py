@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from django.http import HttpResponse
+from django.http import HttpResponse 
 
 
 # Create your views here.
@@ -16,4 +16,7 @@ def acercade(request):
 
 def contacto (request):
     return render(request, "contacto.html")
+
+def nosotros (request):
+    return render (request, 'nosotros.html')
 
