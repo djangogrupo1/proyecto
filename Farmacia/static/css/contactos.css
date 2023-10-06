@@ -27,40 +27,6 @@ body {
     border-radius: 10px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-label {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color:#fff;
-}
-
-input[type="text"], input[type="email"], input[type="tel"], textarea {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 2px solid #221628;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-family: 'Family Font', sans-serif;
-}
-
-input[type="submit"] {
-    background-color:  #221628;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor:all-scroll;
-   font-family: 'Family Font';
-}
 
 input[type="submit"]:hover {
     background-color: violet;
@@ -70,8 +36,5 @@ color: #1c1c1d;
 font-size: 45px;
 font-style: 'Family Font' ;
 font-weight:lighter;
-}
-nav{
-    grid-column: 2/3;
 }
 
