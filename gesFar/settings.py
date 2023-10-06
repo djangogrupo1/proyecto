@@ -1,6 +1,5 @@
 
 
-
 """
 Django settings for gesFar project.
 
