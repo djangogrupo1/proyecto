@@ -12,12 +12,11 @@
                 <p><span style="font-size: 20px;">Si desea realizarnos una consulta acerca de nuestro programa de salud,
                         complete el siguiente formulario y a la brevedad nos comunicaremos con usted.</span>
             </h1>
-         </div>
-         <form action=  "{% url  'contacto'  %}" >
-          {% csrf_token %}
-         {{ formulario_contacto }}
-         <input type="submit">
-   </form>      
+            <form action=  "{% url  'contacto'  %}" >
+              {% csrf_token %}
+             {{ formulario_contacto }}
+             <input type="submit">
+     
   </div>    
   
  
