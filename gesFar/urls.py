@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import sys
+
+sys.path.append('tp_cac_23635_version2')
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path("" , include("Farmacia.urls")),   
+    #path('admin/', admin.site.urls),
+    path("" , include("Farmacia.urls")),
 ]
