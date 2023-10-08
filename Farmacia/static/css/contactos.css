@@ -75,9 +75,15 @@ nav{
     grid-column: 2/3;
 }
 
+<<<<<<< HEAD
 form {
     padding-left: 220px;
 }
 form .label {
     color: #000;
 }
+=======
+//*.form_estilo {background-color: #784390;
+    display: block;
+}
+>>>>>>> 9b0af7b0574daf24bc1c3f3b830de2c09336cf3a
