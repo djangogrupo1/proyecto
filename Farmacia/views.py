@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.http import HttpResponse
 from  Farmacia.forms import ContactoForm
 from django.urls import reverse
+from django.contrib import messages
 import sys
 #import os
 
@@ -29,6 +30,8 @@ def contacto(request):
       #redirigir = "acercade.html"
       formulario = ContactoForm ( request.POST )
       if formulario.is_valid ():
+
+        messages.info (request, "Recibimos tu mensaje")
 
         return redirect(reverse('acercade'))
 

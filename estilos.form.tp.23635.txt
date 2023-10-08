@@ -1,0 +1,77 @@
+body {
+    background-color: #b7b5b5;
+    font-family: 'Family Font', sans-serif;
+    background-image:url("../img/logo\ blanco.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.left-section {
+    grid-column: 1 / 2;
+}
+
+.right-section {
+    grid-column: 2 / 3;
+    background-color: #784390;
+    padding: 20px;
+    border: 2px solid #221628;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color:#fff;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #221628;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Family Font', sans-serif;
+}
+
+input[type="submit"] {
+    background-color:  #221628;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor:all-scroll;
+   font-family: 'Family Font';
+}
+
+input[type="submit"]:hover {
+    background-color: violet;
+}
+h1{
+color: #1c1c1d;
+font-size: 45px;
+font-style: 'Family Font' ;
+font-weight:lighter;
+}
+nav{
+    grid-column: 2/3;
+}
+
