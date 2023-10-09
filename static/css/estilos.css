@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Ubuntu:ital,wght@0,500;0,700;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Ubuntu:ital,wght@0,500;0,700;1,300&display=swap");
 
 * {
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
   font-size: 1rem;
   height: 100%;
-
 }
 
 body {
@@ -17,8 +16,8 @@ body {
   margin: 0px;
   min-width: 400px;
   font-weight: 500;
-  background-color: #784390;
-  font-family: 'Montserrat', sans-serif;
+  background-color: #6a4c77;
+  font-family: "Montserrat", sans-serif;
 }
 
 header {
@@ -52,7 +51,7 @@ nav ul:hover {
 nav ul li {
   display: inline-block;
   position: relative;
-  font-family: 'Family Font', sans-serif;
+  font-family: "Family Font", sans-serif;
 }
 
 nav ul li a {
@@ -69,9 +68,8 @@ nav ul li a:hover {
   color: rgb(180, 120, 220);
 }
 
-nav ul li:hover>ul {
+nav ul li:hover > ul {
   display: block;
-
 }
 
 .burguer-holder {
@@ -134,17 +132,15 @@ main {
 }
 
 .img:first-child {
-  background-image: url('../img/01.jpeg');
+  background-image: url("../img/01.jpeg");
 }
-
 
 .img:nth-child(2) {
-  background-image: url('../img/02.jpg');
+  background-image: url("../img/02.jpg");
 }
 
-
 .img:nth-child(3) {
-  background-image: url('../img/03.jpeg');
+  background-image: url("../img/03.jpeg");
 }
 
 .puntos {
@@ -169,19 +165,19 @@ input[type="radio"] {
   display: none;
 }
 
-input[type="radio"]+.slider .img-container {
+input[type="radio"] + .slider .img-container {
   left: 0%;
 }
 
-input[type="radio"]:nth-of-type(2):checked+.slider .img-container {
+input[type="radio"]:nth-of-type(2):checked + .slider .img-container {
   left: -100%;
 }
 
-input[type="radio"]:nth-of-type(3):checked+.slider .img-container {
+input[type="radio"]:nth-of-type(3):checked + .slider .img-container {
   left: -200%;
 }
 
-input[type="radio"]:checked+.slider .punto {
+input[type="radio"]:checked + .slider .punto {
   background-color: lightblue;
 }
 
@@ -229,7 +225,6 @@ footer {
   gap: 1em;
   text-align: start;
   margin: 0 auto;
-
 }
 
 .footer-contact {
@@ -315,7 +310,6 @@ footer {
   width: 100%;
   height: 200px;
   background-color: #ccc;
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -329,14 +323,13 @@ footer {
   .image-container {
     height: 400px;
     opacity: 0.4;
-    background-image: url('../img/home_healthy_pic28.jpg');
+    background-image: url("../img/home_healthy_pic28.jpg");
     /* Establece la imagen como fondo */
     background-size: cover;
     /* Escala la imagen de fondo para cubrir todo el contenedor sin deformarla */
     background-position: center;
     /* Centra la imagen de fondo */
     background-repeat: no-repeat;
-
   }
 
   .footer-column {
@@ -347,7 +340,6 @@ footer {
   .container {
     display: block !important;
   }
-
 }
 
 /* Fin footer */
@@ -369,7 +361,6 @@ footer {
   margin: 0;
   padding-bottom: 30px;
   padding-top: 10px;
-
 }
 
 .list-container h2 {
@@ -389,12 +380,11 @@ footer {
 }
 
 .image-container {
-
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../img/home_healthy_pic28.jpg');
+  background-image: url("../img/home_healthy_pic28.jpg");
   /* Establece la imagen como fondo */
   background-size: cover;
   /* Escala la imagen de fondo para cubrir todo el contenedor sin deformarla */
@@ -405,13 +395,12 @@ footer {
 
 .image {
   max-width: 400px;
-
 }
 
-.image-main {}
+.image-main {
+}
 
 /* estilos tarjetas con info */
-
 
 .grid-conta {
   display: grid;
@@ -445,7 +434,6 @@ footer {
   margin: 0px;
 }
 
-
 /* estilos del menu con hexagonos */
 .hex-container {
   display: flex;
@@ -478,7 +466,7 @@ footer {
   height: 100%;
   opacity: 0;
   transition: all 0.3s ease-in-out;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 10px;
 }
 
@@ -520,7 +508,6 @@ ul {
 /* Codigo css para la adaptacion de dispositivos */
 
 @media screen and (max-width: 767px) {
-
   .grid-conta {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -546,10 +533,9 @@ ul {
     display: block;
     width: 100%;
     text-align: center;
-
   }
 
-  nav ul li:hover>ul {
+  nav ul li:hover > ul {
     display: none;
   }
 
@@ -588,7 +574,6 @@ ul {
 
   .hex-inner {
     font-size: 8px;
-
   }
 
   .container {
@@ -614,7 +599,6 @@ ul {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
   .image-container {
     height: 400px;
     opacity: 0.5;
@@ -622,7 +606,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/home_healthy_pic28.jpg');
+    background-image: url("../img/home_healthy_pic28.jpg");
     /* Establece la imagen como fondo */
     background-size: cover;
     /* Escala la imagen de fondo para cubrir todo el contenedor sin deformarla */
@@ -685,11 +669,10 @@ ul {
     font-size: 8px;
   }
 
-
   b {
     display: block;
     width: 50;
-    font-family: 'Family Font';
+    font-family: "Family Font";
     font-weight: 700;
     border-radius: 10px;
     margin: 150px 130px;
@@ -737,8 +720,6 @@ ul {
   margin: 4px 2px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-
-
 }
 
 .button-us:hover {
@@ -751,7 +732,6 @@ ul {
   text-decoration: none;
   font-weight: 700;
   font-size: 20px;
-
 }
 
 .image-caption h3 {
