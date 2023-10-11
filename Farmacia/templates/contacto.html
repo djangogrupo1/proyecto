@@ -12,31 +12,13 @@
       <p><span style="font-size: 20px;">Si desea realizarnos una consulta acerca de nuestro programa de salud,
           complete el siguiente formulario y a la brevedad nos comunicaremos con usted.</span>
     </h1>
-<<<<<<< HEAD
-</div>
-
-</div>
-<div class="container">
-  <div class="left-section">
-=======
->>>>>>> 9b0af7b0574daf24bc1c3f3b830de2c09336cf3a
     <form action="{% url  'contacto'  %}">
       {% csrf_token %}
       {{ formulario_contacto }}
-      <input type="submit">
+      <input type="submit" value="Enviar mensaje">
     </form>
-<<<<<<< HEAD
-    
-
-  </div>
-</div> 
-=======
-   
-
-  </div>
-
 </div>
 
->>>>>>> 9b0af7b0574daf24bc1c3f3b830de2c09336cf3a
+</div>
 
 {% endblock %}

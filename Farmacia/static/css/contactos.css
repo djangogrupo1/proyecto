@@ -38,7 +38,7 @@ label {
     margin-bottom: 10px;
     font-size: 1.2em;
     font-weight: bold;
-    color:#fff;
+    color:#0b0b0b;
 }
 
 //*input[type="text"], input[type="email"], input[type="tel"], textarea {
@@ -75,15 +75,9 @@ nav{
     grid-column: 2/3;
 }
 
-<<<<<<< HEAD
 form {
     padding-left: 220px;
 }
 form .label {
     color: #000;
 }
-=======
-//*.form_estilo {background-color: #784390;
-    display: block;
-}
->>>>>>> 9b0af7b0574daf24bc1c3f3b830de2c09336cf3a
