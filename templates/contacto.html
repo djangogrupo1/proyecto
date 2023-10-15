@@ -5,7 +5,6 @@
 {% endblock %}
 {% block title %}contacto{% endblock %}
 {% block content %}
-<<<<<<< HEAD:Farmacia/templates/contacto.html
 <div class="container">
   <div class="left-section">
     <h1><strong>Conozca más acerca de GES FAR</strong></p>
@@ -21,23 +20,5 @@
 </div>
 
 </div>
-=======
-  <div class="container">
-        <div class="left-section">
-            <h1><strong>Conozca más acerca de GES FAR</strong></p>
-                <h2>Gestión integral y trazabilidad de fármacos en estructuras sanitarias</h2>
-                <p>Si desea realizarnos una consulta acerca de nuestro programa de salud,
-                        complete el siguiente formulario y a la brevedad nos comunicaremos con usted.
-            </h1>
-         </div>
-  </div>    
-  <form action=  "{% url  'contacto'  %}" >
-       {% csrf_token %}
-      {{ formulario_contacto }}
-      <input type="submit">
-</form>      
- 
-
->>>>>>> 9e12400ed3f43ac94139622276b42ddecbb6e758:templates/contacto.html
 
 {% endblock %}
