@@ -1,10 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-<<<<<<< HEAD
-from django.http import HttpResponse
-=======
-from django.http import HttpResponse 
->>>>>>> 9e12400ed3f43ac94139622276b42ddecbb6e758
+from django.http import HttpResponse, HttpResponseRedirect
 from  Farmacia.forms import ContactoForm
 from django.urls import reverse
 import sys
@@ -23,22 +19,19 @@ def modulo(request):
 def acercade(request):
     return render(request, "acercade.html")
 
-<<<<<<< HEAD
 def nosotros(request):
     return render(request, "nosotros.html")
-=======
-def nosotros (request):
-    return render (request, 'nosotros.html')
->>>>>>> 9e12400ed3f43ac94139622276b42ddecbb6e758
 
-def contacto(request):
+def contacto(request, ):
   #print (request. POST)
   if request.method == 'POST':
       #redirigir = "acercade.html"
       formulario = ContactoForm ( request.POST )
       if formulario.is_valid ():
+          #url = reverse ('index')
+          #return HttpResponseRedirect (url)
 
-        return redirect(reverse('acercade'))
+        return redirect(reverse(request, 'acercade'))
 
   else:
       formulario = ContactoForm ()
