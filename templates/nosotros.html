@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}Página 1{% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" href="{% static './img/silueta logo.png'%}" />
+    <link rel="stylesheet" href="{% static './css/estiloSN.css' %}" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap" rel="stylesheet">
+
+    
+{% endblock %}    
+
+
+    {% block content %}
+
+      <div class="container">
+          <div class="primer-seccion">
+              <h4>Modelo Centrado en Personal Hospitalario</h4>
+              <h2>Gestión inteligente de Salud</h2>
+              <p> A través de un Sistema Digital buscamos mejorar
+                la calidad de la carga de los Fármacos, brindando seguridad
+                al momento de la entrega al paciente.
+              </p>
+          </div>
+      
+          <div class="segunda-seccion">
+            <video  id="miVideo" 
+              src="{% static './videos/Mdico Salud Hospital - Free video on Pixabay - Pixabay.mp4' %}" autoplay muted loop>
+               
+            </video>
+          </div>
+      </div>
+  
+      <script src= "{% static './js/app.js' %}"></script>    
+
+    {% endblock %}  

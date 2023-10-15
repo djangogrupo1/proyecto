@@ -1,0 +1,97 @@
+body {
+  background: #bca2c5 !important;
+  font-family: "Family Font", sans-serif;
+  background-image: url("../img/logo\ blanco.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position:bottom;
+}
+
+.container {
+  margin: 50px auto;
+  width: 80%;
+  background-color: unset !important;
+}
+
+.left-section {
+  padding: 20px;
+  background-color: #6a4c77;
+  color: white;
+  opacity: 0.6;
+}
+.left-section h1 {
+
+  color: white;
+}
+.right-section {
+  grid-column: 2 / 3;
+  background-color: #784390;
+  padding: 20px;
+  border: 2px solid #221628;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px 0px 50px;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000000;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  margin-bottom: 20px;
+  padding: 8px;
+  border:none;
+  font-size: 1em;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(230, 230, 230);
+  border-bottom: 4px #784390 solid;
+}
+
+input[type="submit"] {
+  background-color: #784390;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: all-scroll;
+  width:50%;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 60px;
+}
+
+input[type="submit"]:hover {
+  background-color: #571874;
+}
+h1 {
+  color: #1c1c1d;
+  font-size: 45px;
+  font-style: "Family Font";
+  font-weight: lighter;
+}
+nav {
+  grid-column: 2/3;
+}
+
+
+@media (max-width: 767px) {
+    .left-section h1, h2 {
+      font-size: 18px;
+    }
+    .left-section p{
+        font-size: 16px;
+    }
+  }
