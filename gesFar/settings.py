@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'gesFar.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "django_cac_23635",
-        "USER": "walter_cac",
+        "NAME": "gesfar",
+        "USER": "postgres",
         "PASSWORD": "avmayo852",
         "HOST": "127.0.0.1",
         "PORT": "5432",
