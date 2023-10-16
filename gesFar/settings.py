@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-p8hjkj(gy_^sfg9$1jim^o@8blu5h7!(j9__%a%fqao7#laq*f'
+# SECRET_KEY = 'django-insecure-p8hjkj(gy_^sfg9$1jim^o@8blu5h7!(j9__%a%fqao7#laq*f'
 SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'gesFar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/ "templates"],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'gesFar.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "gesfar",
-        "USER": "postgres",
-        "PASSWORD": "avmayo852",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+       "ENGINE": "django.db.backends.postgresql_psycopg2",
+       "NAME":config("DB_NAME"),
+       "USER":config("DB_USER"),
+       "PASSWORD":config("DB_PASSWORD"),
+       "HOST":config("DB_HOST"),
+       "PORT":config("DB_PORT"),
     }
 }
 

@@ -21,7 +21,7 @@ class ContactoForm ( forms.Form ):
         label= "Email:", required = True )
 
     mensaje = forms.CharField(
-    label= "Mensaje", required = False, widget=forms.Textarea)
+    label= "Mensaje:", required = False, widget=forms.Textarea)
 
     def clean_nombre(self):
        if self.cleaned_data["nombre"]== "odio":
