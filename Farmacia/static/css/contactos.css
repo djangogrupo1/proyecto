@@ -27,6 +27,8 @@ body {
     border-radius: 10px;
 }
 
+<<<<<<< HEAD
+=======
 form {
     display: flex;
     flex-direction: column;
@@ -61,6 +63,7 @@ input[type="submit"] {
     cursor:all-scroll;
    font-family: 'Family Font';
 }
+>>>>>>> e818046b3cb6d3e9ad76d5c82e50e265fd411b14
 
 input[type="submit"]:hover {
     background-color: violet;
@@ -71,13 +74,16 @@ font-size: 45px;
 font-style: 'Family Font' ;
 font-weight:lighter;
 }
-nav{
-    grid-column: 2/3;
-}
 
+<<<<<<< HEAD
+//*.form_estilo {background-color: #784390;
+    display: block;
+}
+=======
 form {
     padding-left: 220px;
 }
 form .label {
     color: #000;
 }
+>>>>>>> e818046b3cb6d3e9ad76d5c82e50e265fd411b14
