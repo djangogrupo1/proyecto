@@ -1,3 +1,13 @@
 # Ignorar archivos de caché de Python
 
 gesFar/__pycache__
+
+#.env
+gesFar/.ENV
+.venv
+
+#entorno
+./entorno
+
+#migration 
+./gesFar/Farmacia/__pycache__

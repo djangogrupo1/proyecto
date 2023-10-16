@@ -36,7 +36,6 @@ def contacto(request):
            request, 'Error al cargar formulario'
         )
   
-          
 
 
         contacto_db = Contacto (

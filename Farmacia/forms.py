@@ -15,7 +15,7 @@ class ContactoForm ( forms.Form ):
         label= "Nombre:", required = True, widget= forms.TextInput)
     
     apellido = forms.CharField (
-        label= "Apellido:", required = True, widget = forms.TextInput(attrs={'class': 'form_estilo'}))
+        label= "Apellido:", required = True, widget = forms.TextInput)
     
     email = forms.EmailField (
         label= "Email:", required = True )
