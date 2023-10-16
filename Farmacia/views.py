@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
+<<<<<<< HEAD
 from django.views.generic import TemplateView
+=======
+from django.views.generic import TemplateView       
+>>>>>>> ad3e1ed930c38f284d1b4f17367d9b9e8595ad92
 from django.http import HttpResponse, HttpResponseRedirect
 from  Farmacia.forms import ContactoForm
 from django.urls import reverse
@@ -30,6 +34,12 @@ def contacto(request, ):
       #redirigir = "acercade.html"
       formulario = ContactoForm ( request.POST )
       if formulario.is_valid ():
+<<<<<<< HEAD
+=======
+          #url = reverse ('index')
+          #return HttpResponseRedirect (url)
+
+>>>>>>> ad3e1ed930c38f284d1b4f17367d9b9e8595ad92
         messages.success(request, 'Recibimos tu mensaje')
       else:
         messages.error(
@@ -46,6 +56,10 @@ def contacto(request, ):
         )
 
         contacto_db.save()
+<<<<<<< HEAD
+=======
+
+>>>>>>> ad3e1ed930c38f284d1b4f17367d9b9e8595ad92
 
         return redirect(reverse(request, 'acercade'))
 
