@@ -25,27 +25,34 @@ def nosotros(request):
     return render(request, "nosotros.html")
 
 def contacto(request, ):
-  #print (request. POST)
+  formulario = None
   if request.method == 'POST':
-      #redirigir = "acercade.html"
-      formulario = Contacto ( request.POST )
+      
+      formulario = ContactoForm ( request.POST )
       if formulario.is_valid ():
         messages.success(request, 'Recibimos tu mensaje')
-      else:
-        messages.error(
-           request, 'Error al cargar formulario'
-        )
-        contacto_db = ContactoForm (
+        mensaje = f"De : {formulario.cleaned_data['nombre']} <{formulario.cleaned_data['apellido']}>\n Asunto: {formulario.cleaned_data['email']}\n Mensaje: {formulario.cleaned_data['mensaje']}"
+        mensaje_html = f"""
+                <p>De: {formulario.changed_data['nombre']} <a href="mailto:{formulario.cleaned_data['apellido']}">{formulario.cleaned_data['email']}</a></p>
+                <p>Asunto:  {formulario.cleaned_data['asunto']}</p>
+                <p>Mensaje: {formulario.cleaned_data['mensaje']}</p>
+            """
+            
+        contacto_db = Contacto (
             nombre = formulario.cleaned_data ["nombre"],
             apellido = formulario.cleaned_data ["apellido"],
             email = formulario.cleaned_data ["email"],
-            mendaje = formulario.cleaned_data ["mensaje"]
+            mensaje = formulario.cleaned_data ["mensaje"]
         )
 
         contacto_db.save()
 
-        return redirect(reverse(request, 'acercade'))
+        return redirect(reverse(request, 'index'))
 
+      else:
+        messages.error(request, 'Error al cargar formulario')
+
+        
   else:
       formulario = ContactoForm ()
          
