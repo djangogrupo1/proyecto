@@ -21,7 +21,7 @@
           {% endfor %} 
 
 
-          <form action="{% url 'contacto'  %}">
+          <form method="post" action="{% url 'contacto'  %}">
                 {% csrf_token %}
                 {{ formulario_contacto }} {{ campo }}
 
