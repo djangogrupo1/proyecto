@@ -22,18 +22,18 @@ def no_letras (value):
 class ContactoForm ( forms.Form ):
     nombre = forms.CharField (
         label= "Nombre:", required = True, 
-        validators= (no_numeros,) and (no_carateres_reg,),
+        validators= (no_numeros,),
         widget= forms.TextInput)
     
     apellido = forms.CharField (
         label= "Apellido:", required = True,
-        validators= (no_numeros,) and (no_carateres_reg,),
+        validators= (no_numeros,),
         widget = forms.TextInput)
     
-    email = forms.EmailField (
+    email = forms.CharField (      
         label= "Email:", required = True,
         validators= (no_carateres_reg,),
-        widget= forms.EmailInput)
+        widget= forms.TextInput)
         
     mensaje = forms.CharField(
     label= "Mensaje:", required = False, widget=forms.Textarea)
@@ -42,21 +42,26 @@ class ContactoForm ( forms.Form ):
 
     def clean_nombre(self):
        if self.cleaned_data["nombre"] == "odio":
-        raise  ValidationError ("Palabra inapropiada")
+         raise  ValidationError ("Palabra inapropiada")
        return self.cleaned_data["nombre"]
 
     def clean_apellido(self):
        if self.cleaned_data["apellido"] == "terror":
-        raise  ValidationError ("Palabra inapropiada")
-       return self.cleaned_data["nombre"]
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["apellido"]
     
     def clean_mensaje(self):
-        if self.cleaned_data['mensaje'] <5:
+        mensaje=self.cleaned_data ['mensaje'] 
+        if len(mensaje)<5:
             raise ValidationError(
                 "Debes especificar mejor el mensaje que nos envias")
         return self.cleaned_data['mensaje']
 
     def clean(self):
-      if self.cleaned_data["nombre"] == "" and  self.cleaned_data[""] == "terror":
-         raise ValidationError ("palabras inapropiadas")
-      return self.cleaned_data
+      cleaned_data=super().clean()
+      nombre= cleaned_data.get("nombre")
+      apellido= cleaned_data.get("apellido")
+      if nombre == "odio" and apellido == "terror":
+         raise ValidationError("Palabra inapropiadas")
+      return cleaned_data
+

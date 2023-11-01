@@ -8,7 +8,7 @@ import sys
 from Farmacia.models import Contacto
 import os
 
-sys.path.append('tp_cac_23635_version2')
+#no_numerossys.path.append('tp_cac_23635_version2')
 
 # Create your views here.
 def index(request):
@@ -31,13 +31,7 @@ def contacto(request, ):
       formulario = ContactoForm ( request.POST )
       if formulario.is_valid ():
         messages.success(request, 'Recibimos tu mensaje')
-        mensaje = f"De : {formulario.cleaned_data['nombre']} <{formulario.cleaned_data['apellido']}>\n Asunto: {formulario.cleaned_data['email']}\n Mensaje: {formulario.cleaned_data['mensaje']}"
-        mensaje_html = f"""
-                <p>De: {formulario.changed_data['nombre']} <a href="mailto:{formulario.cleaned_data['apellido']}">{formulario.cleaned_data['email']}</a></p>
-                <p>Asunto:  {formulario.cleaned_data['asunto']}</p>
-                <p>Mensaje: {formulario.cleaned_data['mensaje']}</p>
-            """
-            
+             
         contacto_db = Contacto (
             nombre = formulario.cleaned_data ["nombre"],
             apellido = formulario.cleaned_data ["apellido"],
@@ -46,20 +40,18 @@ def contacto(request, ):
         )
 
         contacto_db.save()
-
-        return redirect(reverse(request, 'index'))
+        
+        return redirect('index')
 
       else:
-        messages.error(request, 'Error al cargar formulario')
-
-        
+        messages.error(request, 'al cargar formulario')
+       
   else:
-      formulario = ContactoForm ()
-         
+      formulario = ContactoForm ()        
   context =  {
      'formulario_contacto'  : formulario 
-      }
-  return render (request, "contacto.html", context ) 
+    }
+  return render(request, "contacto.html", context ) 
 
 
 ####se definen cleans###
