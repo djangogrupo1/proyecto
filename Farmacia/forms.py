@@ -16,6 +16,11 @@ def no_carateres_reg(value):
 def no_letras (value):
    if any(char.isalfa() for char in value):
       raise ValidationError ("No se permiten letras en este campo")
+   
+
+def no_space (value):
+   if any(char.ispace() for char in value):
+      raise ValidationError ("No se permiten especios en este campo")
 
    
    
@@ -61,7 +66,7 @@ class ContactoForm ( forms.Form ):
       cleaned_data=super().clean()
       nombre= cleaned_data.get("nombre")
       apellido= cleaned_data.get("apellido")
-      if nombre == "odio" and apellido == "terror":
+      if nombre == "guerra" and apellido == "muerte":
          raise ValidationError("Palabra inapropiadas")
       return cleaned_data
 
