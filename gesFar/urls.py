@@ -22,7 +22,7 @@ sys.path.append('tp_cac_23635_version2')
 
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path("" , include("Farmacia.urls")),
 ]
 
