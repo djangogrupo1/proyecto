@@ -1,25 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
-{% block extra_css%}
-<link rel="stylesheet" href="{% static './css/contacto.css'%}">
+{% block head%}
+<link rel="stylesheet" href="{% static './css/contactos.css'%}">
 {% endblock %}
 {% block title %}contacto{% endblock %}
 {% block content %}
-  <div class="container">
-        <div class="left-section">
-            <h1><strong>Conozca más acerca de GES FAR</strong></p>
-                <h2>Gestión integral y trazabilidad de fármacos en estructuras sanitarias</h2>
-                <p><span style="font-size: 20px;">Si desea realizarnos una consulta acerca de nuestro programa de salud,
-                        complete el siguiente formulario y a la brevedad nos comunicaremos con usted.</span>
-            </h1>
-         </div>
-  </div>    
-  <form action=  "{% url  'contacto'  %}" >
-       {% csrf_token %}
-      {{ formulario_contacto }}
-      <input type="submit">
-</form>      
- 
+<div class="container">
+  <div class="left-section">
+    <h1><strong>Conozca más acerca de GES FAR</strong></p>
+      <h2>Gestión integral y trazabilidad de fármacos en estructuras sanitarias</h2>
+      <p><span style="font-size: 20px;">Si desea realizarnos una consulta acerca de nuestro programa de salud,
+          complete el siguiente formulario y a la brevedad nos comunicaremos con usted.</span>
+    </h1>
+
+    <div class="mess_form">
+          {% for message in messages %}
+              <div> <h2>{{ message.tags }}
+                  {{ message }}</h2>
+              </div>
+          {% endfor %}
 
 
-{% endblock %}
+          <form method="post" action="{% url 'contacto'  %}">
+                {% csrf_token %}
+                {{ formulario_contacto }} 
+
+         <!--  <div class="">
+              {% if formulario.non_field_errors %}
+            </div>  
+                <div class="">
+                  {{ formulario.non_field_errors }}
+                </div>
+              {% endif %} -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              <input type="submit" value="Enviar mensaje">
+          </form>
+    </div>
+
+
+
+
+  </div>
+
+  {% endblock %}
