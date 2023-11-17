@@ -3,10 +3,8 @@
 
 __Integrantes__ 
 
-* De Los Santos	Araceli
 * Cardozo Nayla Pamela
 * Avalos Victoria Inés
-* Gomez Cristian
 * Frías	Walter
 
 ## Descripción del proyecto 
