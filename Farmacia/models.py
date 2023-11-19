@@ -17,6 +17,9 @@ class Area (models.Model):
    area = models.CharField(max_length=30, verbose_name="Area") #AREAS; HOSPITAL Y FARMACIA#
    baja = models.BooleanField(default=False)
 
+   def __str__(self):
+      return self.area
+
 ### CLASE ABSTRACTA ##
 class Profesional (models.Model):  
    nombre = models.CharField(max_length=30, verbose_name="Nombre")
@@ -42,12 +45,18 @@ class Medico (Profesional):
    legajo = models.CharField(max_length=30, verbose_name="Legajo")
    matricula = models.IntegerField(verbose_name="Matricula")
    area = models.ForeignKey(Area, on_delete=models.CASCADE)
+
+   def __str__(self):
+      return f"{self.nombre} - {self.area}"
    
 
 class Farmaceutico (Profesional):
    legajo = models.CharField(max_length=30, verbose_name="Legajo")
    matricula = models.IntegerField(verbose_name="Matricula")
    area = models.ForeignKey(Area, on_delete=models.CASCADE)
+
+   def __str__(self):
+        return f"{self.apellido} {self.nombre}"
 
 
 class Paciente (models.Model):  
@@ -65,6 +74,9 @@ class Paciente (models.Model):
       pass
    def clean_email (self):
       pass
+   def __str__(self):
+      return f"{self.apellido} {self.nombre}"
+
 
 ### RELACION MUCHOS A MUCHOS, UN PACIENTE PUEDE TENER VARIOS MEDICOS ###
 
@@ -72,6 +84,10 @@ class Turno (models.Model):
    paciente = models.ForeignKey(Paciente, on_delete = models.CASCADE)
    medico = models.ForeignKey(Medico, on_delete = models.CASCADE)
    fecha = models.DateField(verbose_name="Fecha del turno")
+   fecha = models.DateField(verbose_name="Fecha del turno")
+
+   def __str__(self):
+      return f"{self.paciente} - {self.fecha}"
 
 ###RELACION MUCHOS A UNO, MUCHOS RECETAS PUEDEN PERTENECER A UN PACIENTE### 
 ###MUHOS MEDICAMENTOS PUEDEN CORRESPONDER A UN PACIENTE###
@@ -82,6 +98,9 @@ class Turno (models.Model):
 class Receta (models.Model):
    numero_receta = models.IntegerField(verbose_name= "Nro_receta")
    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)  
+   
+   def __str__(self):
+      return f"{self.paciente}"
 
    
 class Medicamento (models.Model):
@@ -92,6 +111,9 @@ class Medicamento (models.Model):
    precio = models.IntegerField(verbose_name= "Precio")
    cantidad = models.IntegerField(verbose_name= "Cantidad") 
    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)  
+
+   def __str__(self):
+      return f"{self.nombre} - {self.paciente}"
 
 
 
