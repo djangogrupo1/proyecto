@@ -84,6 +84,7 @@ class Turno (models.Model):
    paciente = models.ForeignKey(Paciente, on_delete = models.CASCADE)
    medico = models.ForeignKey(Medico, on_delete = models.CASCADE)
    fecha = models.DateField(verbose_name="Fecha del turno")
+   fecha = models.DateField(verbose_name="Fecha del turno")
 
    def __str__(self):
       return f"{self.paciente} - {self.fecha}"
