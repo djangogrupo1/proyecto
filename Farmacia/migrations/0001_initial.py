@@ -105,6 +105,9 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("fecha", models.DateField(verbose_name="Fecha del turno")),
+                ("hora", models.TimeField(verbose_name="Hora del turno")),
+
+
                 (
                     "medico",
                     models.ForeignKey(

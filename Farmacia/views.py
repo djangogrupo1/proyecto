@@ -11,9 +11,9 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 import os
 
-#no_numerossys.path.append('tp_cac_23635_version2')
 
-# Create your views here.
+##VISTAS DEL SITIO## 
+
 def index(request):
     contexto = {'mensaje': '¡Hola desde la vista de inicio!'}
     return render(request, 'home.html', contexto)
