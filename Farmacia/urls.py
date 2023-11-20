@@ -1,6 +1,6 @@
 from django.urls import path
 from  Farmacia import views
-from .views import  acercade, contacto, modulo, acercade, index, nosotros,login, paciente, profesional, TurnosListViews
+from .views import  acercade, contacto, modulo, acercade, index, nosotros,login, paciente, TurnosListViews
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 #import sys
