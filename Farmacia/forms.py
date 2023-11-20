@@ -3,7 +3,8 @@ from django.forms import ValidationError
 from .models import Turno
 import re
 
-##validaciones##
+##VALIDACIONES##
+
 def no_numeros(value):
    if any(char.isdigit() for char in value):
       raise ValidationError (
@@ -23,6 +24,7 @@ def no_space (value):
    if any(char.ispace() for char in value):
       raise ValidationError ("No se permiten especios en este campo")
 
+##FORMULARIO DE CONTACTO##
      
 class ContactoForm ( forms.Form ):
     nombre = forms.CharField (
@@ -42,6 +44,73 @@ class ContactoForm ( forms.Form ):
         
     mensaje = forms.CharField(
     label= "Mensaje:", required = False, widget=forms.Textarea)
+
+    ##CLEANS FORMULARIO##
+
+    def clean_nombre(self):
+       if self.cleaned_data["nombre"] == "odio":
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["nombre"]
+
+    def clean_apellido(self):
+       if self.cleaned_data["apellido"] == "terror":
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["apellido"]
+    
+    def clean_mensaje(self):
+        mensaje=self.cleaned_data ['mensaje'] 
+        if len(mensaje)<5:
+            raise ValidationError(
+                "Debes especificar mejor el mensaje que nos envias")
+        return self.cleaned_data['mensaje']
+
+    def clean(self):
+      cleaned_data=super().clean()
+      nombre= cleaned_data.get("nombre")
+      apellido= cleaned_data.get("apellido")
+      if nombre == "guerra" and apellido == "muerte":
+         raise ValidationError("Palabra inapropiadas")
+      return cleaned_data
+      
+
+##FORMULARIO VASADO EN CLASES##
+ 
+class TurnosModelForm (forms.ModelForm):
+   
+   class Meta:
+      model = Turno
+      fields = '__all__'
+
+   def clean_nombre(self):
+       if self.cleaned_data["nombre"] == "odio":
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["nombre"]
+
+   def clean_apellido(self):
+       if self.cleaned_data["apellido"] == "terror":
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["apellido"]  
+
+##FORMULARIO ALTA PACIENTES##
+
+class PacienteForm ( forms.Form ):
+    nombre = forms.CharField (
+        label= "Nombre:", required = True, 
+        validators= (no_numeros,),
+        widget= forms.TextInput)
+    
+    apellido = forms.CharField (
+        label= "Apellido:", required = True,
+        validators= (no_numeros,),
+        widget = forms.TextInput)
+    
+    email = forms.CharField (      
+        label= "Email:", required = True,
+        validators= (no_carateres_reg,),
+        widget= forms.TextInput)
+        
+    historia = forms.IntegerField(
+    label= "H.Clinica:", required = True, widget=forms.TextInput)
 
     ##CLEANS##
 
@@ -71,22 +140,5 @@ class ContactoForm ( forms.Form ):
       return cleaned_data
       
 
-class TurnosModelForm (forms.ModelForm):
-   
-   class Meta:
-      model = Turno
-      fields = '__all__'
-
-   def clean_nombre(self):
-       if self.cleaned_data["nombre"] == "odio":
-         raise  ValidationError ("Palabra inapropiada")
-       return self.cleaned_data["nombre"]
-
-   def clean_apellido(self):
-       if self.cleaned_data["apellido"] == "terror":
-         raise  ValidationError ("Palabra inapropiada")
-       return self.cleaned_data["apellido"]  
-
       
     
-

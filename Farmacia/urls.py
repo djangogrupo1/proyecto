@@ -1,6 +1,6 @@
 from django.urls import path
 #from  Farmacia import views
-from .views import  acercade, contacto, modulo, acercade, index, nosotros, TurnosListViews
+from .views import  acercade, contacto, modulo, acercade, index, nosotros, TurnosListViews, paciente
 #import sys
 #import os
 
@@ -11,6 +11,7 @@ urlpatterns = [
     path("acercade/", acercade, name="acercade"),
     path("contacto/", contacto, name="contacto"),
     path("modulo/", modulo, name="modulo"),
-    path("modulo/", nosotros, name="nosotros"),
+    path("nosotros/", nosotros, name="nosotros"),
+    path("paciente/", paciente, name="paciente"),
     path("turnos/", TurnosListViews.as_view(), name="turnos")    
     ]
