@@ -21,7 +21,7 @@
           {% endfor %}
 
 
-          <form method="post" action="{% url 'contacto'  %}">
+          <form method="post" action="{% url 'turnos'  %}">
                 {% csrf_token %}
                 {{ form_turnos }} 
 
