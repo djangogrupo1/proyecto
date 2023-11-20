@@ -1,5 +1,6 @@
 from django import forms
 from django.forms import ValidationError
+from .models import Turno
 import re
 
 ##validaciones##
@@ -22,8 +23,7 @@ def no_space (value):
    if any(char.ispace() for char in value):
       raise ValidationError ("No se permiten especios en este campo")
 
-   
-   
+     
 class ContactoForm ( forms.Form ):
     nombre = forms.CharField (
         label= "Nombre:", required = True, 
@@ -69,4 +69,24 @@ class ContactoForm ( forms.Form ):
       if nombre == "guerra" and apellido == "muerte":
          raise ValidationError("Palabra inapropiadas")
       return cleaned_data
+      
+
+class TurnosModelForm (forms.ModelForm):
+   
+   class Meta:
+      model = Turno
+      fields = '__all__'
+
+   def clean_nombre(self):
+       if self.cleaned_data["nombre"] == "odio":
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["nombre"]
+
+   def clean_apellido(self):
+       if self.cleaned_data["apellido"] == "terror":
+         raise  ValidationError ("Palabra inapropiada")
+       return self.cleaned_data["apellido"]  
+
+      
+    
 

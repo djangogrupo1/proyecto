@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
-from  Farmacia.forms import ContactoForm
+from  Farmacia.forms import ContactoForm, TurnosModelForm
 from django.urls import reverse
 from django.contrib import messages
 import sys
-from Farmacia.models import Contacto
+from Farmacia.models import Contacto, Turno
+from django.utils import timezone
+from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView
 import os
 
 #no_numerossys.path.append('tp_cac_23635_version2')
@@ -56,7 +59,20 @@ def contacto(request, ):
 
 ####se definen cleans###
 
+class TurnosListViews(ListView):
+   model = Turno
+   template_name = 'turnos.html'
+   context_object_name = 'form_turnos'
+   ordering = ['fecha']
+   #    succes_url = reverse ('index')
 
+   
+class TurnosCreateViews(CreateView):
+   model = Turno
+   template_name = 'turnos.html'
+   context_object_name = 'form_turnos'
+   fields = ['__all__']
 
+   
     
         
