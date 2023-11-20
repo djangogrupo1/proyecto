@@ -22,6 +22,9 @@
       <div class="header-logo">
         <img width="150" src="{% static './img/logo blanco.png' %}" alt="logo " />
       </div>
+      {% if user.is_authenticated %}
+    <p>Bienvenido, {{ user.username }}!</p>
+{% endif %}
     </a>
     <!-- fin header -->
     <br />
@@ -35,7 +38,9 @@
         <li><a href="{% url 'modulo' %}">Modulos</a></li>
         <li><a href="{% url 'nosotros' %}">Sobre Nosotros</a></li>
         <li><a href="{% url 'acercade' %}">Acerca de</a></li>
-        <li><a href="{% url 'contacto'%}">Contactos</a></li>
+        <li><a href="{% url 'contacto' %}">Contactos</a></li>
+        <li><a href="{% url 'turnos' %}">Turnos</a></li>
+        <b><li><a href="{% url 'login'%}" id="login">LogIn</a></li></b>
 
       </ul>
 

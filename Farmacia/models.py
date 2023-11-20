@@ -9,6 +9,12 @@ class Contacto (models.Model):
     mensaje = models.CharField(max_length=500, verbose_name="Mensaje")
 
 
+### FORMULARIO DE LOGIN ###
+class Login (models.Model):
+    nombre = models.CharField(max_length=30, verbose_name="Nombre")
+    apellido = models.CharField(max_length=30, verbose_name="Apellido")
+    email = models.EmailField(max_length=50, verbose_name= "Email")
+
 ### GESTION DE RECETAS ###
 
 ###RELACION MUCHOS A UNO, MUCHOS PROFESIONALES PERTENECEN A UN AREA ### 
@@ -83,6 +89,7 @@ class Paciente (models.Model):
 class Turno (models.Model):
    paciente = models.ForeignKey(Paciente, on_delete = models.CASCADE)
    medico = models.ForeignKey(Medico, on_delete = models.CASCADE)
+   fecha = models.DateField(verbose_name="Fecha del turno")
    fecha = models.DateField(verbose_name="Fecha del turno")
 
    def __str__(self):
