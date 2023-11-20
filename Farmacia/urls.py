@@ -15,4 +15,8 @@ urlpatterns = [
     path("modulo/", login_required(views.modulo), name="modulo"),
     path("modulo/", nosotros, name="nosotros"),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path("modulo/", modulo, name="modulo"),
+    path("nosotros/", nosotros, name="nosotros"),
+    path("paciente/", paciente, name="paciente"),
+    path("turnos/", TurnosListViews.as_view(), name="turnos")    
     ]

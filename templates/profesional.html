@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head%}
+<link rel="stylesheet" href="{% static './css/contactos.css'%}">
+{% endblock %}
+{% block title %}turnos{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="left-section">
+    <h1><strong>Profesionales</strong></p>
+      <h2>Gestión integral y trazabilidad de fármacos en estructuras sanitarias</h2>
+      <p><span style="font-size: 20px;">Si desea realizarnos una consulta acerca de nuestro programa de salud,
+          complete el siguiente formulario y a la brevedad nos comunicaremos con usted.</span>
+    </h1>
+
+    <div class="mess_form">
+          {% for message in messages %}
+              <div> <h2>{{ message.tags }}
+                  {{ message }}</h2>
+              </div>
+          {% endfor %}
+
+
+          <form method="post" action="{% url 'profesional'  %}">
+                {% csrf_token %}
+                {{ form_profesional }} 
+
+         <!--  <div class="">
+              {% if formulario.non_field_errors %}
+            </div>  
+                <div class="">
+                  {{ formulario.non_field_errors }}
+                </div>
+              {% endif %} -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              <input type="submit" value="Agregar">
+          </form>
+    </div>
+
+
+
+
+  </div>
+
+  {% endblock %}

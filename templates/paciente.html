@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head%}
+<link rel="stylesheet" href="{% static './css/contactos.css'%}">
+{% endblock %}
+{% block title %}pacientes{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="left-section">
+    <h1><strong>Resgistro de pacientes</strong></p>
+      <h2>Consectetur, et.quam dignissimos et laudantium, fugit harum.</h2>
+      <p><span style="font-size: 20px;">Ullam dolor, doloribus aperiam ipsam voluptatem, perferendis labore odio. Corporis, at iste.</span>
+    </h1>
+
+    <div class="mess_form">
+          {% for message in messages %}
+              <div> <h2>{{ message.tags }}
+                  {{ message }}</h2>
+              </div>
+          {% endfor %}
+
+
+          <form method="post" action="{% url 'paciente'  %}">
+                {% csrf_token %}
+                {{ formulario_paciente }} 
+
+         <!--  <div class="">
+              {% if formulario.non_field_errors %}
+            </div>  
+                <div class="">
+                  {{ formulario.non_field_errors }}
+                </div>
+              {% endif %} -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+              <input type="submit" value="Agregar">
+          </form>
+    </div>
+
+
+
+
+  </div>
+
+  {% endblock %}
