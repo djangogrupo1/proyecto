@@ -40,8 +40,16 @@
         <li><a href="{% url 'acercade' %}">Acerca de</a></li>
         <li><a href="{% url 'contacto' %}">Contactos</a></li>
         <li><a href="{% url 'turnos' %}">Turnos</a></li>
+
+        {% if user.is_authenticated %}
+
+        <b><li><a href="{% url 'logout'%}" id="logout">LogOut</a></li></b>
+        
+        {% else %}
+
         <b><li><a href="{% url 'login'%}" id="login">LogIn</a></li></b>
 
+        {% endif %}
       </ul>
 
     </nav>

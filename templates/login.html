@@ -3,23 +3,27 @@
 {% block head%}
 <link rel="stylesheet" href="{% static './css/login.css'%}">
 {% endblock %}
-{% block title %}contacto{% endblock %}
+{% block title %}LogIn{% endblock %}
 {% block content %}
 
 <div class="container">
   <h1>LogIn</h1>
-  <div class="form">
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <div class="ingresar">
-      <button type="submit">Iniciar Sesión</button>
-      </div>
-    </div>
-  </form>
-</div>
-
-
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+    <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.password.label_tag }}</td>
+        <td>{{ form.password }}</td>
+    </tr>
+    </table>
+    
+    <input type="submit" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+    </form>
 
   </div>
 

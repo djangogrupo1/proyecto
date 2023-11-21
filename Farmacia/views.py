@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from  Farmacia.forms import ContactoForm, LoginForm, PacienteForm
 from django.urls import reverse
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.views.decorators.csrf import csrf_protect
 import sys
 from Farmacia.models import Contacto, Turno, Paciente
@@ -72,16 +72,14 @@ def login(request):
             username = formulario.cleaned_data['username']
             password = formulario.cleaned_data['password']
 
-            user = authenticate(request, username=username, password=password)
+            user = authenticated(request, username=username, password=password)
 
             if user is not None:
                 auth_login(request, user)
-                messages.success(request, '¡Inicio de sesión exitoso!')
-                return redirect('modelos.html')
+                return redirect('index.html')
             else:
                 messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
-        else:
-            messages.error(request, 'Error al cargar el formulario.')
+    
     else:
         formulario = LoginForm()
 
@@ -105,6 +103,7 @@ class TurnosCreateViews(CreateView):
 
 ##FORMULARIO ALTA PACIENTES###   
 
+@login_required
 def paciente (request,):
     formulario_paciente = None
 

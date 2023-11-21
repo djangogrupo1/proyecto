@@ -139,13 +139,6 @@ class PacienteForm ( forms.Form ):
          raise ValidationError("Palabra inapropiadas")
       return cleaned_data
       
-
-      
-    
-from django import forms
-from django.forms import ValidationError
-import re
-
 ##validaciones##
 def no_numeros(value):
    if any(char.isdigit() for char in value):
@@ -161,12 +154,10 @@ def no_letras (value):
    if any(char.isalfa() for char in value):
       raise ValidationError ("No se permiten letras en este campo")
    
-
 def no_space (value):
    if any(char.ispace() for char in value):
       raise ValidationError ("No se permiten especios en este campo")
 
-   
    
 class ContactoForm ( forms.Form ):
     nombre = forms.CharField (
@@ -216,6 +207,6 @@ class ContactoForm ( forms.Form ):
 
         
 class LoginForm(forms.Form):
-    username = forms.CharField(label="Username",widget= forms.TextInput())
-    password = forms.CharField(label="Password", widget=forms.PasswordInput())
+     username = forms.CharField(label="Username",widget= forms.TextInput())
+     password = forms.CharField(label="Password", widget=forms.PasswordInput())
  

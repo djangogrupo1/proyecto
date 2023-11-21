@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 ### FORMULARIO DE CONTACTO ###
 
@@ -32,6 +33,7 @@ class Profesional (models.Model):
    apellido = models.CharField(max_length=30, verbose_name="Apellido")
    dni = models.IntegerField(verbose_name="DNI")
    email = models.EmailField(max_length=50, verbose_name= "Email") 
+   #user = models.OneToOneField(User)
    
    def clean_nombre (self):
       pass
