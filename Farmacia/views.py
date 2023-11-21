@@ -1,7 +1,9 @@
+from typing import Any
+#from django.db.models.query import _BaseQuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
-from  Farmacia.forms import ContactoForm, PacienteForm
+from  Farmacia.forms import ContactoForm, PacienteForm, TurnosModelForm
 from django.urls import reverse
 from django.contrib import messages
 import sys
@@ -62,18 +64,23 @@ def contacto(request, ):
 
 ##FORMULARIO VASADO EN CLASES##
 
-class TurnosListViews(ListView):
-   model = Turno
-   template_name = 'turnos.html'
-   context_object_name = 'form_turnos'
-   ordering = ['fecha']
-
-   
 class TurnosCreateViews(CreateView):
    model = Turno
    template_name = 'turnos.html'
-   context_object_name = 'form_turnos'
-   fields = ['__all__']
+   #context_object_name = 'form'
+   #form_class = TurnosModelForm
+   fields = '__all__'
+  
+
+
+class TurnosListViews(ListView):
+   model = Turno
+   template_name = 'turnos.html'
+   #context_object_name = 'form'
+   ordering = ['fecha']
+  
+
+   
 
 
 ##FORMULARIO ALTA PACIENTES###   
