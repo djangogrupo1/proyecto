@@ -11,6 +11,7 @@ urlpatterns = [
     path("acercade/", acercade, name="acercade"),
     path("contacto/", contacto, name="contacto"),
     path("modulo/", modulo, name="modulo"),
-    path("modulo/", nosotros, name="nosotros")
-         
+    path("nosotros/", nosotros, name="nosotros"),
+    path('acercade/<str:tipo_servicio>/', acercade, name='acercade')  
+    
     ]
