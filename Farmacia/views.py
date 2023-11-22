@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
-from  Farmacia.forms import ContactoForm, LoginForm, PacienteForm
+from  Farmacia.forms import ContactoForm,  PacienteForm
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
@@ -67,7 +67,7 @@ def contacto(request, ):
 #login
 def login(request):
     if request.method == 'POST':
-        formulario = LoginForm(request.POST)
+        formulario = form(request.POST)
         if formulario.is_valid():
             username = formulario.cleaned_data['username']
             password = formulario.cleaned_data['password']

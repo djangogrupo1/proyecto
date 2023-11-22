@@ -206,7 +206,7 @@ class ContactoForm ( forms.Form ):
       return cleaned_data
 
         
-class LoginForm(forms.Form):
-     username = forms.CharField(label="Username",widget= forms.TextInput())
-     password = forms.CharField(label="Password", widget=forms.PasswordInput())
+# class LoginForm(forms.Form):
+#      username = forms.CharField(label="Username",widget= forms.TextInput())
+#      password = forms.CharField(label="Password", widget=forms.PasswordInput())
  
