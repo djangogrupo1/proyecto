@@ -21,12 +21,12 @@ urlpatterns = [
     path(" ", acercade, name="acercade_sin_parametro"),
     path("contacto/", contacto, name="contacto"),
     path("modulo/", login_required(views.modulo), name="modulo"),
-    path("paciente/", paciente, name="paciente"),
-    path("turnos/", TurnosListViews.as_view(), name="turnos"),    
+    path("paciente/", login_required(views.paciente), name="paciente"),
+    path("turnos/", login_required(TurnosListViews.as_view()), name="turnos"),    
     path("modulo/", modulo, name="modulo"),
     path("nosotros/", nosotros, name="nosotros"),
     path('acercade/<str:tipo_servicio>/', acercade, name='acercade_con_parametro'),
-    path("paciente/", paciente, name="paciente"),
-    path("turnos/", TurnosListViews.as_view(), name="turnos"), 
+    #path("paciente/", paciente, name="paciente"),
+    #path("turnos/", TurnosListViews.as_view(), name="turnos"), 
     #path("turnos/", TurnosCreateViews.as_view(), name="turnos")     
     ]
