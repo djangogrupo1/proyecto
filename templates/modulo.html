@@ -33,14 +33,13 @@
                     <div class="card__front" style="background-image: url('{% static 'img/paciente.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
-                            <h1>Ingreso del Paciente</h1>
+                            <h1>Pacientes</h1>
                         </div>
                     </div>
                     <div class="card__back" style="background-image: url('{% static 'img/paciente2.jpg' %}')">
                         <div class="body__card_back">
                             <h1>Sección Pacientes</h1>
-                            <p>Tendrás un acceso directo a tu Historia Clínica, podrás ver tus recertas y el estado de tus pedidos
-                                en la farmacia</p>
+                            <p>Seccion para cargar datos del paciente</p>
                             <a href="{% url 'paciente' %}" style="margin-top: 80;"> Ir ABM Pacientes</a>
                         </div>
                     </div>
@@ -90,14 +89,14 @@
                     <div class="card__front" style="background-image: url('{% static 'img/farmacos2.jpg' %}')">
                         <div class="bg"></div>
                         <div class="body__card_front">
-                            <h1>Entrega del Pedido de Recetas</h1>
+                            <h1>Turnos</h1>
                         </div>
                     </div>
                     <div class="card__back" style="background-image: url('{% static 'img/farmacos3.jpg' %}')">
                         <div class="body__card_back">
-                            <h1>Preparados de Farmacia</h1>
-                            <p>Valorización del Medicamento para Facturación. Gestión de Pedidos de Presupuestos. Órdenes de compras.</p>
-                            <a href="" style="margin-top: 80;"> Ir Preparados de Farmacia</a>
+                            <h1>Asignacion de turnos</h1>
+                            <p>En caso de ser cliente de nuestros servicios y de necesitar un turno por favor complete el siguiente formulario</p>
+                            <a href="{% url 'turnos' %}" style="margin-top: 80;"> Ir Turnos</a>
                         </div>
                     </div>
                 </div>

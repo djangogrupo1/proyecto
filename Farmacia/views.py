@@ -103,6 +103,7 @@ def login(request):
     return render(request, 'login.html', context)
 ##FORMULARIO VASADO EN CLASES##
 
+
 class TurnosCreateViews(CreateView):
    model = Turno
    template_name = 'turnos.html'
@@ -110,7 +111,6 @@ class TurnosCreateViews(CreateView):
    #form_class = TurnosModelForm
    fields = '__all__'
   
-
 
 class TurnosListViews(ListView):
    model = Turno
@@ -124,7 +124,7 @@ class TurnosListViews(ListView):
 
 ##FORMULARIO ALTA PACIENTES###   
 
-@login_required
+
 def paciente (request,):
     formulario_paciente = None
 
