@@ -18,7 +18,7 @@ urlpatterns = [
     path('accounts/login/', auth_views.LoginView.as_view (template_name='login.html'),name='login'),
     path('accounts/logout/', LogoutView.as_view(),name='logout'),
     
-    path("acercade/", acercade, name="acercade_sin_parametro"),
+    path(" ", acercade, name="acercade_sin_parametro"),
     path("contacto/", contacto, name="contacto"),
     path("modulo/", login_required(views.modulo), name="modulo"),
     path("paciente/", paciente, name="paciente"),
