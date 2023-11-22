@@ -26,7 +26,7 @@ def index(request):
 def modulo(request):
     return render(request, 'modulo.html')
 
-def acercade(request,tipo_servicio):
+def acercade(request,tipo_servicio= None):
     tipos_servicios = {
         'trazabilidad': 'Trazabilidad total en la suministración de fármacos en estructuras sanitarias, partiendo de la farmacia al interno de tal estructura.',
         'admision': 'Se lleva un control desde el momento que la receta es indicada por el Profesional, desde cualquier sector: Consultorios, Guardia o Internación.',
@@ -36,7 +36,10 @@ def acercade(request,tipo_servicio):
         'profesionalismo': 'La suministración de fármacos por parte del enfermero al paciente destinatario del blíster en la cantidad y hora indicadas en la Rp por el profesional interviniente.'
     }
 
-    servicio_descripcion = tipos_servicios.get(tipo_servicio, 'Servicio no encontrado')
+    if tipo_servicio is None:
+        servicio_descripcion = 'Descripción predeterminada para acercade sin tipo_servicio'
+    else:
+        servicio_descripcion = tipos_servicios.get(tipo_servicio, 'Servicio no encontrado')
 
     return render(request, 'acercade.html', {'tipo_servicio': tipo_servicio, 'servicio_descripcion': servicio_descripcion})
 
