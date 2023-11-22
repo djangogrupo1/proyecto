@@ -24,8 +24,19 @@ def index(request):
 def modulo(request):
     return render(request, 'modulo.html')
 
-def acercade(request):
-    return render(request, "acercade.html")
+def acercade(request,tipo_servicio):
+    tipos_servicios = {
+        'trazabilidad': 'Trazabilidad total en la suministración de fármacos en estructuras sanitarias, partiendo de la farmacia al interno de tal estructura.',
+        'admision': 'Se lleva un control desde el momento que la receta es indicada por el Profesional, desde cualquier sector: Consultorios, Guardia o Internación.',
+        'gestion': 'La gestión de los fármacos por parte de los profesionales intervinientes a partir de la elaboración electrónica de la Rp (receta paciente).',
+        'preparacion': 'La preparación de la terapia farmacológica por parte del enfermero/a comúnmente denominado blíster farmacológico del paciente.',
+        'suministro': 'La suministración de fármacos por parte del enfermero al paciente destinatario del blíster en la cantidad y hora indicadas en la Rp por el profesional interviniente.',
+        'profesionalismo': 'La suministración de fármacos por parte del enfermero al paciente destinatario del blíster en la cantidad y hora indicadas en la Rp por el profesional interviniente.'
+    }
+
+    servicio_descripcion = tipos_servicios.get(tipo_servicio, 'Servicio no encontrado')
+
+    return render(request, 'acercade.html', {'tipo_servicio': tipo_servicio, 'servicio_descripcion': servicio_descripcion})
 
 def nosotros(request):
     return render(request, "nosotros.html")
