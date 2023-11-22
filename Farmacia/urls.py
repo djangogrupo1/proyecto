@@ -5,6 +5,8 @@ from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.views import LogoutView
+#from  Farmacia import views
+from .views import  acercade, contacto, modulo, acercade, index, nosotros, TurnosListViews, paciente, TurnosCreateViews 
 #import sys
 #import os
 
@@ -23,6 +25,8 @@ urlpatterns = [
     path("turnos/", TurnosListViews.as_view(), name="turnos"),    
     path("modulo/", modulo, name="modulo"),
     path("nosotros/", nosotros, name="nosotros"),
-    path('acercade/<str:tipo_servicio>/', acercade, name='acercade')  
-    
+    path('acercade/<str:tipo_servicio>/', acercade, name='acercade'),
+    path("paciente/", paciente, name="paciente"),
+    path("turnos/", TurnosListViews.as_view(), name="turnos"), 
+    #path("turnos/", TurnosCreateViews.as_view(), name="turnos")     
     ]
