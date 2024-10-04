@@ -25,13 +25,8 @@ urlpatterns = [
     path("turnos/", TurnosListViews.as_view(), name="turnos"),    
     path("modulo/", modulo, name="modulo"),
     path("nosotros/", nosotros, name="nosotros"),
-<<<<<<< HEAD
-    path("paciente/", paciente, name="paciente"),
-    path("turnos/", TurnosListViews.as_view(), name="turnos"), 
-=======
     path('acercade/<str:tipo_servicio>/', acercade, name='acercade_con_parametro'),
     #path("paciente/", paciente, name="paciente"),
     #path("turnos/", TurnosListViews.as_view(), name="turnos"), 
->>>>>>> develop
     #path("turnos/", TurnosCreateViews.as_view(), name="turnos")     
     ]

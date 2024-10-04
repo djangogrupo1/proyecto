@@ -3,11 +3,7 @@ from typing import Any
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
-<<<<<<< HEAD
-from  Farmacia.forms import ContactoForm, PacienteForm, TurnosModelForm
-=======
 from  Farmacia.forms import ContactoForm,  PacienteForm
->>>>>>> develop
 from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, permission_required
@@ -107,10 +103,6 @@ def login(request):
     return render(request, 'login.html', context)
 ##FORMULARIO VASADO EN CLASES##
 
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
 class TurnosCreateViews(CreateView):
    model = Turno
    template_name = 'turnos.html'
@@ -119,10 +111,6 @@ class TurnosCreateViews(CreateView):
    fields = '__all__'
   
 
-<<<<<<< HEAD
-
-=======
->>>>>>> develop
 class TurnosListViews(ListView):
    model = Turno
    template_name = 'turnos.html'
