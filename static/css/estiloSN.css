@@ -8,7 +8,11 @@ aside{
     margin: 0px auto;
     position: relative;
 }
-
+#id{
+  text-align:end;
+  font-style:italic;
+  size: 15px;
+}
 .primer-seccion{
     background-color: bisque ;
     position: absolute;

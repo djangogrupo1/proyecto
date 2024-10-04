@@ -3,9 +3,15 @@ from typing import Any
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.http import HttpResponse, HttpResponseRedirect
+<<<<<<< HEAD
 from  Farmacia.forms import ContactoForm, PacienteForm, TurnosModelForm
+=======
+from  Farmacia.forms import ContactoForm,  PacienteForm
+>>>>>>> develop
 from django.urls import reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, permission_required
+from django.views.decorators.csrf import csrf_protect
 import sys
 from Farmacia.models import Contacto, Turno, Paciente
 from django.utils import timezone
@@ -20,11 +26,26 @@ def index(request):
     contexto = {'mensaje': '¡Hola desde la vista de inicio!'}
     return render(request, 'home.html', contexto)
 
+@login_required
 def modulo(request):
     return render(request, 'modulo.html')
 
-def acercade(request):
-    return render(request, "acercade.html")
+def acercade(request,tipo_servicio= None):
+    tipos_servicios = {
+        'trazabilidad': 'Trazabilidad total en la suministración de fármacos en estructuras sanitarias, partiendo de la farmacia al interno de tal estructura.',
+        'admision': 'Se lleva un control desde el momento que la receta es indicada por el Profesional, desde cualquier sector: Consultorios, Guardia o Internación.',
+        'gestion': 'La gestión de los fármacos por parte de los profesionales intervinientes a partir de la elaboración electrónica de la Rp (receta paciente).',
+        'preparacion': 'La preparación de la terapia farmacológica por parte del enfermero/a comúnmente denominado blíster farmacológico del paciente.',
+        'suministro': 'La suministración de fármacos por parte del enfermero al paciente destinatario del blíster en la cantidad y hora indicadas en la Rp por el profesional interviniente.',
+        'profesionalismo': 'La suministración de fármacos por parte del enfermero al paciente destinatario del blíster en la cantidad y hora indicadas en la Rp por el profesional interviniente.'
+    }
+
+    if tipo_servicio is None:
+        servicio_descripcion = 'Descripción predeterminada para acercade sin tipo_servicio'
+    else:
+        servicio_descripcion = tipos_servicios.get(tipo_servicio, 'Servicio no encontrado')
+
+    return render(request, 'acercade.html', {'tipo_servicio': tipo_servicio, 'servicio_descripcion': servicio_descripcion})
 
 def nosotros(request):
     return render(request, "nosotros.html")
@@ -62,8 +83,34 @@ def contacto(request, ):
   return render(request, "contacto.html", context ) 
 
 
+####se definen cleans###
+#login
+def login(request):
+    if request.method == 'POST':
+        formulario = form(request.POST)
+        if formulario.is_valid():
+            username = formulario.cleaned_data['username']
+            password = formulario.cleaned_data['password']
+
+            user = authenticated(request, username=username, password=password)
+
+            if user is not None:
+                auth_login(request, user)
+                return redirect('index.html')
+            else:
+                messages.error(request, 'Nombre de usuario o contraseña incorrectos.')
+    
+    else:
+        formulario = LoginForm()
+
+    context = {'formulario': formulario,'user': request.user}
+    return render(request, 'login.html', context)
 ##FORMULARIO VASADO EN CLASES##
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
 class TurnosCreateViews(CreateView):
    model = Turno
    template_name = 'turnos.html'
@@ -72,7 +119,10 @@ class TurnosCreateViews(CreateView):
    fields = '__all__'
   
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
 class TurnosListViews(ListView):
    model = Turno
    template_name = 'turnos.html'
@@ -84,6 +134,7 @@ class TurnosListViews(ListView):
 
 
 ##FORMULARIO ALTA PACIENTES###   
+
 
 def paciente (request,):
     formulario_paciente = None
